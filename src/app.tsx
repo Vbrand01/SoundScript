@@ -1,4 +1,6 @@
 import logo from './assets/logo.svg'
+import { NoteAdd } from './components/note-add'
+import { NoteCard } from './components/note-card'
 
 export function App() {
  return (
@@ -14,31 +16,12 @@ export function App() {
         
         <div className="h-px bg-zinc-700" />
 
-        <div className="grid grid-cols-3 auto-rows-[250px] space-x-6">
-            <div className="rounded-md bg-zinc-700 p-5 space-y-2">
-                <span className="text-zinc-50 text-sm font-medium">
-                    Adicionar nota
-                </span>
-                <p className="text-zinc-400 text-sm leading-6">
-                    Grave uma nota em áudio que será convertida para texto automaticamente.
-                </p>
-            </div>
-            <div className="rounded-md bg-zinc-800 p-5 space-y-2">
-                <span className="text-zinc-50 text-sm font-medium">
-                    Adicionar nota
-                </span>
-                <p className="text-zinc-400 text-sm leading-6">
-                    Grave uma nota em áudio que será convertida para texto automaticamente.
-                </p>
-            </div>
-            <div className="rounded-md bg-zinc-800 p-5 space-y-2">
-                <span className="text-zinc-50 text-sm font-medium">
-                    Adicionar nota
-                </span>
-                <p className="text-zinc-400 text-sm leading-6">
-                    Grave uma nota em áudio que será convertida para texto automaticamente.
-                </p>
-            </div>
+        <div className="grid grid-cols-3 auto-rows-[250px] gap-6">
+
+            <NoteAdd />
+            
+            <NoteCard />
+
         </div>
     </div>
  )
