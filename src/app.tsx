@@ -12,6 +12,7 @@ export function App() {
         placeholder="Busque em suas notas..." 
         className="w-full bg-transparent text-3xl font-semibold tracking-tight placeholder:text-zinc-500 outline-none"
         />
+
         </form>
         
         <div className="h-px bg-zinc-700" />
@@ -19,7 +20,7 @@ export function App() {
         <div className="grid grid-cols-3 auto-rows-[250px] gap-6">
 
             <NoteAdd />
-            
+
             <NoteCard />
 
         </div>
