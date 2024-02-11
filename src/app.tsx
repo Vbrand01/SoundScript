@@ -18,11 +18,8 @@ export function App() {
         <div className="h-px bg-zinc-700" />
 
         <div className="grid grid-cols-3 auto-rows-[250px] gap-6">
-
             <NoteAdd />
-
             <NoteCard />
-
         </div>
     </div>
  )
