@@ -1,16 +1,31 @@
-export function NoteCard(){
-    return  (
-        <button className="rounded-md text-left bg-zinc-800 outline-none border-2 border-zinc-600 p-5 space-y-2 overflow-hidden relative hover:ring-1 hover:ring-zinc-300  focus:visible:ring-2 focus:ring-rose-600">
-            <span className="text-zinc-300 text-sm font-medium">
-                Há 6 dias
-            </span>
-            <p className="text-zinc-400 text-sm leading-6">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic deserunt placeat recusandae vitae dignissimos quos. Minus voluptates autem ipsam aliquam libero, ullam odit nobis tempora est asperiores consequatur commodi! Quos.
-                Hic deserunt placeat recusandae vitae dignissimos quos. Minus voluptates autem ipsam aliquam libero, ullam odit nobis tempora est asperiores consequatur commodi! Quos.
-            </p>
+import * as Dialog from '@radix-ui/react-dialog'
 
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-black/0 pointer-events-none" />
-        </button>
+interface NoteCardProps{
+    note: {
+      date: Date
+      content: string
+    }
+}
+
+export function NoteCard({note}: NoteCardProps){
+    return  (
+        <Dialog.Root>
+            <Dialog.Trigger className="rounded-md text-left flex-col bg-zinc-800 outline-none border-2 border-zinc-600 p-5 gap-2 overflow-hidden relative hover:ring-1 hover:ring-zinc-300  focus:visible:ring-2 focus:ring-rose-600">
+                <span className="text-zinc-300 text-sm font-medium">
+                    {note.date.toISOString()}
+                </span>
+                <p className="text-zinc-400 text-sm leading-6">
+                {note.content}
+                </p>
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-black/0 pointer-events-none" />
+            </Dialog.Trigger>
+
+            <Dialog.Portal>
+                <Dialog.Overlay className='inset-0 fixed bg-black/60'/>
+                <Dialog.Content className='fixed left-1/2 w-[300px] h-[200px] bg-white'>
+                    oi
+                </Dialog.Content>
+            </Dialog.Portal>
+        </Dialog.Root>
     )
 }
