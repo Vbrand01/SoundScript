@@ -22,8 +22,15 @@ export function NoteCard({note}: NoteCardProps){
 
             <Dialog.Portal>
                 <Dialog.Overlay className='inset-0 fixed bg-black/60'/>
-                <Dialog.Content className='fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] w-full bg-slate-700 rounded-md flex flex-col outline-none'>
-                    oi
+                <Dialog.Content className='fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] w-full h-[60vh] bg-slate-700 rounded-md flex flex-col outline-none'>
+                    <div className="flex flex-1 flex-col gap-3 p-5">
+                    <span className="text-zinc-300 text-sm font-medium">
+                        {note.date.toISOString()}
+                    </span>
+                    <p className="text-zinc-400 text-sm leading-6">
+                        {note.content}
+                    </p>
+                    </div>
                 </Dialog.Content>
             </Dialog.Portal>
         </Dialog.Root>
